@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music Playlist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff3ec5;
+      text-align: center;
+    }
+
+    header {
+      background-color: #b0d00f;
+      color: #e4d3d3;
+      padding: 1em;
+      background-image: url(OwRt.gif);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-image: url(full.jpeg.jpg);
+      background-color: #ab2f2f;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 18px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    li.selected {
+      background-color: #b0d00f;
+      color: #fff;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      background-color: lavender;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h1>Akki's Playlist</h1>
+      </header>
+  
+
+  <ul id="playlist">
+    <li onclick="playSong('song/128-Dil Ibaadat - Tum Mile 128 Kbps.mp3')">
+      <h2>Dil Ibaadat</h2>
+      <p>Artist: Legend KK</p>
+      <audio controls>
+        <source src="song/128-Dil Ibaadat - Tum Mile 128 Kbps.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+
+    <li>
+        <h2>Jee Karda</h2>
+        <p>Artist: Divya kumar</p>
+        <audio controls>
+          <source src="song/128-Jee Karda - Badlapur 128 Kbps.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </li>
+  
+      <li>
+          <h2>Jeena Jeena</h2>
+          <p>Artist: Atif Aslam</p>
+          <audio controls>
+            <source src="song/128-Jeena Jeena - Badlapur 128 Kbps.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </li>
+  
+        <li>
+          <h2>Phir Mohabbat</h2>
+          <p>Artist: Arjit singh</p>
+          <audio controls>
+            <source src="song/128-Phir Mohabbat - Murder 2 128 Kbps [vocals].mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </li>
+  
+        <li>
+          <h2>Kaali Car</h2>
+          <p>Artist: Rocks A</p>
+          <audio controls>
+            <source src="song/_Kaali Car(PagalWorld.com.se).mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </li>
+  
+        <li>
+          <h2>Aadat</h2>
+          <p>Artist: Atif Aslam</p>
+          <audio controls>
+            <source src="song/Atif Aslam - Aadat (slowed down & reverbed) (320  kbps) (YoutubeToAny.com).mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </li>
+
+    <!-- Add more songs as needed -->
+  </ul>
+
+  <script>
+    function playSong(src) {
+      var audioElements = document.querySelectorAll('audio');
+      audioElements.forEach(function(audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      var playlistItems = document.querySelectorAll('#playlist li');
+      playlistItems.forEach(function(item) {
+        item.classList.remove('selected');
+      });
+
+      var selectedAudio = document.querySelector('audio[src="' + src + '"]');
+      var selectedLi = document.querySelector('li[onclick="playSong(\'' + src + '\')"]');
+      selectedLi.classList.add('selected');
+
+      if (selectedAudio) {
+        selectedAudio.play();
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+    <!-- Add more songs as needed -->
+  </ul>
+
+  <script>
+    function playSong(src) {
+      var audioElements = document.querySelectorAll('audio');
+      audioElements.forEach(function(audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      var playlistItems = document.querySelectorAll('#playlist li');
+      playlistItems.forEach(function(item) {
+        item.classList.remove('selected');
+      });
+
+      var selectedAudio = document.querySelector('audio[src="' + src + '"]');
+      var selectedLi = document.querySelector('li[onclick="playSong(\'' + src + '\')"]');
+      selectedLi.classList.add('selected');
+
+      if (selectedAudio) {
+        selectedAudio.play();
+      }
+    }
+  </script>
+</body>
+</html>
